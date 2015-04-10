@@ -1,0 +1,8 @@
+site_name: Dokumentace Roští.cz
+pages:
+- [index.md, Domů]
+- [base.md, Základní informace]
+- [dns.md, DNS a registrace domén]
+- [python.md, Podpora pro Python]
+- [about.md, Kdo to napsal]
+theme: readthedocs
