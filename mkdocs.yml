@@ -3,6 +3,9 @@ pages:
 - [index.md, Domů]
 - [base.md, Základní informace]
 - [dns.md, DNS a registrace domén]
+- [php.md, Podpora pro PHP]
 - [python.md, Podpora pro Python]
+- [node.md, Podpora pro Node.js]
+- [cron.md, Cron (plánování úloh)]
 - [about.md, Kdo to napsal]
 theme: readthedocs

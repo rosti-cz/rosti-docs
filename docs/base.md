@@ -44,7 +44,9 @@ Mohou se zde objevit i další adresáře, které budou případně vysvětleny 
 
 Základem SSH přístupu je předkonfigurovaný BASH. Při prvním spuštění se vygeneruje _.bashrc_, který se dále již automaticky nepřepisuje. Můžete ho libovolně měnit. Z _.bashrc_ neodstraňujte řádek:
 
-``# DO NOT REWRITE ME``
+```
+# DO NOT REWRITE ME
+```
 
 Pokud tak učiníte, přepíše se při dalším startu kontejneru.
 
@@ -52,10 +54,10 @@ Pokud tak učiníte, přepíše se při dalším startu kontejneru.
 
 Kromě hesla z administrace, můžete pro přístup používat také SSH klíče jako na běžbém linuxovém systému. Veřejnou část klíče nakopírujte do */srv/.ssh/authorized_keys*. Ve výchozím stavu adresář _.ssh_ ani soubor *authorized_keys* neexistuje. Můžete je vytvořit ručně a nastavit jim práva pouze pro vlastníka.
 
-``
+```shell
 mkdir -p /srv/.ssh
 touch /srv/.ssh/authorized_keys
 chmod 700 /srv/.ssh
 chmod 600 /srv/.ssh/authorized_keys
-``
+```
 

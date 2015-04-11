@@ -21,14 +21,14 @@ Virtualenv se nachází v adresáři _/srv/venv/_ a pokud není, můžete ho akt
 
 Virtualenv se nedá přesouvat a při změně obrazu, například z Pythonu 2.7 a 3.4 nebo i při změně na jinou minoritní verzi, se může stát, že ho budete muset vygenerovat znovu. Závislosti vaší aplikace byste měli mít vždy někde po ruce, aby se to dalo snadno provést. Běžně bývají součástí zdrojových kódů. Takže když chcete znovuvytvořit virtualenv, použijete následující:
 
-``
+```shell
 supervisorctl stop python
 rm -rf /srv/venv
 virtualenv /srv/venv
 source /srv/venv/bin/activate
 pip install -r /srv/app/requirements.txt
 supervisorctl start python
-``
+```
 
 První a poslední příkaz zastaví a spustí vaši aplikaci. Předposlední nainstaluje závislosti uložené v _/srv/app/requirements.txt_ a další příkazy pravděpodobně není třeba další rozebírat.
 
