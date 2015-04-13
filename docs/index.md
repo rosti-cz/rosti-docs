@@ -4,10 +4,10 @@ Vítejte na Roští, bude se vám tu líbit. Postavili jsme trochu jinou hosting
 
 Aktuálně podporujeme tyto technologie:
 
-* PHP
-* Python
+* [PHP](php.md)
+* [Python](python.md)
 * Ruby
-* Node.js
+* [Node.js](node.md)
 
 A z databází:
 
