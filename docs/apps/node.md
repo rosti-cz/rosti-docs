@@ -37,7 +37,7 @@ Konfiguraci supervisoru můžete libovolně měnit nebo přidávat další běž
 Restart aplikace se provádí pomocí:
 
 ```shell
-supervisorctl restart node
+supervisorctl restart app
 ```
 
 Aplikace se vypne a následně zapne. Reload bez přerušení služby supervisor neumí a musíte použít postup pro vybranou technologii. Někdy postačí odeslat signál *HUP*, může to být ale složitější.

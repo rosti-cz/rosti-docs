@@ -24,7 +24,7 @@ Nastavení PHP, v souboru *php.ini*, můžete libovolně měnit. Soubor se nach�
 Po změně *php.ini* je potřeba restartovat apache, to se provádí přes supervisor pomocí:
 
 ```shell
-supervisorctl restart php
+supervisorctl restart app
 ```
 
 ## Supervisor
