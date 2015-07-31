@@ -6,7 +6,10 @@ pages:
 - [apps/index.md, Aplikace, Úvod]
 - [apps/php.md, Aplikace, PHP]
 - [apps/python.md, Aplikace, Python]
+- [apps/ruby.md, Aplikace, Ruby]
 - [apps/node.md, Aplikace, Node.js]
 - [cron.md, Ostatní, Cron (plánování úloh)]
+- [redis.md, Ostatní, Redis]
+- [memcached.md, Ostatní, Memcached]
 - [about.md, Ostatní, Kdo to napsal]
 theme: readthedocs
