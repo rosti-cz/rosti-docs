@@ -1,12 +1,13 @@
 site_name: Dokumentace Roští.cz
 pages:
-- [index.md, Domů]
-- [base.md, Základní informace]
-- [dns.md, DNS a registrace domén]
-- [apps/index.md, Aplikace, Úvod]
-- [apps/php.md, Aplikace, PHP]
-- [apps/python.md, Aplikace, Python]
-- [apps/node.md, Aplikace, Node.js]
-- [cron.md, Ostatní, Cron (plánování úloh)]
-- [about.md, Ostatní, Kdo to napsal]
+    - Domů: index.md
+    - "Základní informace": base.md
+    - "DNS a registrace domén": dns.md
+    - Aplikace:
+        - PHP: apps/php.md
+        - Python: apps/python.md
+        - Node: apps/node.md
+    - Úložiště: storages/index.md
+    - Cron: cron.md
+    - "O nás": about.md
 theme: readthedocs

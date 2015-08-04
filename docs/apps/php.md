@@ -1,9 +1,7 @@
 # PHP
 
-Běh PHP aplikací je u nás stejně flexibilní jako u jiných technologí, ale PHP se z principu nasazuje o něco snadněji. Podporujeme širokou škálu verzí PHP od 5.2 po ty nejnovější, vždy se skokem v minoritní verzi, takže:
+Běh PHP aplikací je u nás stejně flexibilní jako u jiných technologí, ale PHP se z principu nasazuje o něco snadněji. Podporujeme širokou škálu verzí PHP od 5.4 po ty nejnovější, vždy se skokem v minoritní verzi, takže:
 
-* PHP 5.2
-* PHP 5.3
 * PHP 5.4
 * PHP 5.5
 * PHP 5.6
