@@ -6,15 +6,15 @@ Aktuálně podporujeme tyto technologie:
 
 * [PHP](apps/php.md)
 * [Python](apps/python.md)
-* Ruby
+* [Ruby](apps/ruby.md)
 * [Node.js](apps/node.md)
 
 A z databází:
 
 * PostgreSQL
 * MySQL
-* Redis
-* Memcached
+* [Redis](redis.md)
+* [Memcached](memcached.md)
 * MongoDB
 
 A na následujících řádcích vám zkusíme stručně vysvětlit, jakým způsobem můžete na Roští provádět deploy, nebo-li nasazení vašeho kódu.

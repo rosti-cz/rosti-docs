@@ -10,4 +10,6 @@ pages:
     - Úložiště: storages/index.md
     - Cron: cron.md
     - "O nás": about.md
+    - Memcached: memcached.md
+    - Redis: redis.md
 theme: readthedocs
