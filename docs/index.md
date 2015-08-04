@@ -13,8 +13,8 @@ A z databází:
 
 * PostgreSQL
 * MySQL
-* [Redis](redis.md)
-* [Memcached](memcached.md)
+* [Redis](storages/redis.md)
+* [Memcached](storages/memcached.md)
 * MongoDB
 
 A na následujících řádcích vám zkusíme stručně vysvětlit, jakým způsobem můžete na Roští provádět deploy, nebo-li nasazení vašeho kódu.

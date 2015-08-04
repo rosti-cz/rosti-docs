@@ -4,12 +4,14 @@ pages:
     - "Základní informace": base.md
     - "DNS a registrace domén": dns.md
     - Aplikace:
+        - Úvod: apps/index.md
         - PHP: apps/php.md
         - Python: apps/python.md
         - Node: apps/node.md
-    - Úložiště: storages/index.md
+    - Úložiště:
+        - Úvod: storages/index.md
+        - Memcached: storages/memcached.md
+        - Redis: storages/redis.md
     - Cron: cron.md
     - "O nás": about.md
-    - Memcached: memcached.md
-    - Redis: redis.md
 theme: readthedocs
