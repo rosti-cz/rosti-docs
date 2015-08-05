@@ -17,8 +17,8 @@ Když se u nás rozhodnete mít jen jednu subdoménu nebo třeba jen poštovní 
 
 | Typ záznamu | IP adresa            |
 |-------------|----------------------|
-| A           | 83.167.253.74        |
-| AAAA        | 2a01:430:225::18     |
+| A           | 83.167.253.87        |
+| AAAA        | 2a01:430:225::9      |
 | MX          | mail.rosti.cz        |
 
 
