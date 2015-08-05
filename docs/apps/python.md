@@ -34,6 +34,8 @@ První a poslední příkaz zastaví a spustí vaši aplikaci. Předposlední na
 
 ## Supervisor
 
+Pro kompletní informace o supervisoru se prosím podívejte na [stránku dokumentace](../tools/supervisor.md), kterou věnujeme právě jemu.
+
 Aplikaci je možné restartovat pomocí _supervisorctl_:
 
 ```shell

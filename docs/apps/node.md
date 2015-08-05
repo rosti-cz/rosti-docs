@@ -8,6 +8,8 @@ Můžete u nás provozovat jakýkoukoli aplikaci, ale aby byla dostupná na nast
 
 ## Supervisor
 
+Pro kompletní informace o supervisoru se prosím podívejte na [stránku dokumentace](../tools/supervisor.md), kterou věnujeme právě jemu.
+
 Aplikace běží v supervisoru a jeho konfiguraci naleznete v */srv/conf/supervisor.d/node.conf*. Aplikace spouští pomocí:
 
 ```shell

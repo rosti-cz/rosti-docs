@@ -27,6 +27,8 @@ supervisorctl restart app
 
 ## Supervisor
 
+Pro kompletní informace o supervisoru se prosím podívejte na [stránku dokumentace](../tools/supervisor.md), kterou věnujeme právě jemu.
+
 Apache běží pod daemonem *supervisord*, jehož nastavení je možné ovlivnit v */srv/conf/supervisor.d*. Pro PHP je zde menší význam než u jiných technologií, ale do supervisoru můžete dát i další skripty běžící na pozadí. Tato možnost je určena pro zkušenější uživatele a případné využití je třeba konzultovat s [dokumentací supervisoru](http://supervisord.org/). Můžete se obrátit i na naši technickou podporu.
 
 ## Hledání problémů

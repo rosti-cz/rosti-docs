@@ -3,6 +3,7 @@ pages:
     - Domů: index.md
     - "Základní informace": base.md
     - "DNS a registrace domén": dns.md
+    - "Základní pojmy": aword.md
     - Aplikace:
         - Úvod: apps/index.md
         - PHP: apps/php.md
@@ -13,6 +14,8 @@ pages:
 #        - Úvod: storages/index.md
         - Memcached: storages/memcached.md
         - Redis: storages/redis.md
+    - Nástroje:
+        - Supervisor: tools/supervisor.md
     - Cron: cron.md
     - "O nás": about.md
 theme: readthedocs
