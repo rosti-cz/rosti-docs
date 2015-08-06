@@ -9,7 +9,7 @@ pages:
         - PHP: apps/php.md
         - Python: apps/python.md
         - Node: apps/node.md
-#        - Ruby: apps/ruby.md
+        - Ruby: apps/ruby.md
     - Úložiště:
 #        - Úvod: storages/index.md
         - Memcached: storages/memcached.md

@@ -44,6 +44,8 @@ supervisorctl update
 
 Akce *reread* načte znovu konfiguraci a *update* porovná současnou konfiguraci s tou načtenou a provede vše co je potřebné, aby současný stav korespondoval s tím v nové konfiguraci.
 
+![Supervisor reread/update](../imgs/supervisor_reread_update.png)
+
 Někdy ale potřebujete proces zastavit, spustit nebo restartovat. To se dělá následovně:
 
 ```basb
