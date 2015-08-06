@@ -16,6 +16,6 @@ pages:
         - Redis: storages/redis.md
     - Nástroje:
         - Supervisor: tools/supervisor.md
-    - Cron: cron.md
+        - Cron: tools/cron.md
     - "O nás": about.md
 theme: readthedocs
