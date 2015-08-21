@@ -34,3 +34,8 @@ Apache běží pod daemonem *supervisord*, jehož nastavení je možné ovlivnit
 ## Hledání problémů
 
 Všechny informace o běhu vaší aplikace najdete v */srv/logs*. Běh aplikace můžete ovlivnit v mnoha směrech a tak by nemělo být složité problém nalézt. Pokud si ale nebudete vědět rady, napište nám na podporu a určitě nějaké řešení vymyslíme.
+
+## Aktualizace/změna obrazu
+
+V administraci je možné změnit obraz s verzí PHP. Na rozdíl od jiných jazyků, PHP obrazy nevyžadují žádné další kroky od uživatele a je možné s verzemi cestovat na novější i starší. Po změně obrazu se celý kontejner restartuje a jediné, na co si musíte dát pozor, je kompatibilita vašeho kódu s novým PHP.
+

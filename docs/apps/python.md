@@ -43,3 +43,40 @@ supervisorctl restart app
 ```
 
 Když spustíte _supervisorctl_ bez parametrů, dostanete jeho konzoli s dalšími parametry. Logy z běhu pythoní aplikace najdete _/srv/logs/_ a konfiguraci supervisoru v _/srv/conf/supervisor.d/_.
+
+## Aktualizace/změna obrazu
+
+Administrace nabízí možnost změnit obraz, čímž se změní verze Pythonu a to vyžaduje ihned po změně zásah popsaný dále. Na verzi Pythonu je závislý virtualenv, který se nachází v */srv/venv*. Část Pythonu je v něm natvrdo nakopírovaná a tak Python v systému a Python ve virtualenvu musí být shodný. Správný postup po změně obrazu je:
+
+```bash
+cd
+rm -rf venv
+/opt/python/bin/virtualenv venv
+source venv/bin/activate
+pip install -r app/requirements.txt
+supervisorctl restart app
+```
+
+Soubor *requirements.txt* by měl být obsažen v každé vaší aplikaci, aby jste si usnadnili upgrade ale i deployment. Nezapomeňte seznam aktualizovat, například pomocí:
+
+```bash
+pip freeze > ~/app/requirements.txt
+```
+
+V Pythonu 3 už je virtualenv integrován jako *pyvenv*. Roští používá u všech Pythonů *virtualenv* z důvodu kompatibility, ale pokud jste používali sami v minulosti *pyvenv*, je aktualizace o poznání jednodušší:
+
+```bash
+/opt/python/bin/pyvenv --upgrade ~/venv
+```
+
+Pro úplnost ještě uvedu, že virtualenv s *pyvenv* se vytváří takto:
+
+```bash
+cd
+rm -rf venv
+/opt/python/bin/pyvenv venv
+source venv/bin/activate
+pip install -r app/requirements.txt
+```
+
+
