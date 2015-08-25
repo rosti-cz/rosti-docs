@@ -18,5 +18,6 @@ pages:
     - Nástroje:
         - Supervisor: tools/supervisor.md
         - Cron: tools/cron.md
+        - "Doinstalování Node.js": addnode.md
     - "O nás": about.md
 theme: readthedocs
