@@ -10,4 +10,6 @@ Pokud netušíte, jak *crontab* nastavit, podívejte se na [související člán
 
 V běžném systému stačí zavolat *crontab -e*, ale na Roští musíte počítat s tím, že cokoli mimo */srv* je po změně image nebo po pouhé aktualizaci z naší strany ztraceno. Standardně je crontab uložen ve */var/spool/cron/crontabs/*, kam také při startu kontejneru přesunujeme obsah */srv/conf/crontab*.
 
+## CLIcast
 
+<script type="text/javascript" src="https://asciinema.org/a/6t1rutdek6wyacktz8ffm6jfr.js" id="asciicast-6t1rutdek6wyacktz8ffm6jfr" async></script>
