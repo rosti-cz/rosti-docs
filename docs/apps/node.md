@@ -47,3 +47,19 @@ Aplikace se vypne a následně zapne. Reload bez přerušení služby supervisor
 ## Hledání problémů
 
 Všechny informace o běhu vaší aplikace najdete v */srv/logs*. Běh aplikace můžete ovlivnit v mnoha směrech a tak by nemělo být složité problém nalézt. Pokud si ale nebudete vědět rady, napište nám na podporu a určitě nějaké řešení vymyslíme.
+
+## Aktualizace kontejneru
+
+Administrace umožňuje změnu image vaší aplikace, čímž se změní verze technologie, kterou používáte, v tomto případě Node.js. Změna je jednoduchá, v administraci vyberete novou verzi image, po uložení se váš kontejner restartuje a po naběhnutí pojede z nového.
+
+Změna je to sice jednoduchá, ale o to horší jsou dopady. Změnou verze Node.js se může změnit i rozhraní pro pluginy, takže první krok po změně je odstranění adresáře *node_modules* a jeho opětovné vytvoření. O vše by se mělo postarat následující:
+
+```bash
+cd ~/app
+rm -rf node_modules
+npm install
+supervisorctl restart app
+```
+
+Samozřejmě spuštěno přes SSH přístup. Poslední příklad *npm install* bude fungovat pouze, pokud máte správně vyplněny závislosti. Z tohoto důvodu doporučujeme udržovat v závislostech pořádek. Vyvarujete se případným problémům.
+

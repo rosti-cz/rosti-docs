@@ -4,6 +4,7 @@ pages:
     - "Základní informace": base.md
     - "DNS a registrace domén": dns.md
     - "Základní pojmy": aword.md
+    - "E-mailové schránky": emails.md
     - Aplikace:
         - Úvod: apps/index.md
         - PHP: apps/php.md
@@ -17,5 +18,6 @@ pages:
     - Nástroje:
         - Supervisor: tools/supervisor.md
         - Cron: tools/cron.md
+        - "Doinstalování Node.js": addnode.md
     - "O nás": about.md
 theme: readthedocs

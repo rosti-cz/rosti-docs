@@ -66,3 +66,18 @@ server {
 Kde místo */srv/static/* napíšete cestu k vaším statikům.
 
 Po první nasazené aplikaci zjistíte, že vám Roští nestojí v cestě a pokud byste náhodou zjistili že ano, napište nám na technickou podporu. Stačí kliknout na zelenou ikonku vlevo dole.
+
+## Aktualizace/změna obrazu
+
+Změna verze Ruby se provádí pomocí změny obrazu v administraci. Je to jednoduchý krok, ale po provedení vyžaduje i změny ve vašem kontejneru. U Ruby je situace o trochu jednodušší než u Pythonu a stačí smazat adresář *~/.gem* a vytvořit ho znovu pomocí nástroje *bundle*, případně jiného správce gemů.
+
+Po změně obrazu zavolejte toto:
+
+```bash
+rm -rf ~/.gem
+cd app
+bundle install
+supervisorctl restart app
+```
+
+Smazání adresáře *.gem* je nutné z důvodu nekompatibility rozhraní Ruby v jeho jednotlivých verzích. V některých případech to nutné nebude, ale pořádně si pokaždé aplikaci otestujte, než se rozhodnete kontejner neupravovat.
