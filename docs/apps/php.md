@@ -6,6 +6,7 @@ Běh PHP aplikací je u nás stejně flexibilní jako u jiných technologí, ale
 * PHP 5.5
 * PHP 5.6
 * PHP 5.x
+* PHP 7.0
 
 Když se objeví nová verze, během pár týdnů ji přidáme. Aktualizujeme image vždy na nejnovější sub minor verzi. Minoritní verze budou k dispozici vždy, i po skončení jejich oficiální podpory. Na končící podporu se vás budeme snažit upozorňovat a dostanete prostor pro vyřešení ať už přechodem na novější verzi nebo setrváním u již nepodporované verze.
 
