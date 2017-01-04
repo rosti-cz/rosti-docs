@@ -4,7 +4,7 @@ Podpora Node.js je u nás stejně dobrá jako u jiných jazyků. Na rozdíl od s
 
 Když v administraci vytvoříte Node.js aplikací, na pozadí se z vybraného Node.js image vytvoří kontejner, do kterého se můžete hned přihlásit. Standardně v něm běží jednoduchý Node.js aplikace se základními informacemi, abyste se měli od čeho odrazit.
 
-Můžete u nás provozovat jakýkoukoli aplikaci, ale aby byla dostupná na nastavené doméně, musí naslouchat na portu **8000** a komunikovat **HTTP protokolem**.
+Můžete u nás provozovat jakýkoukoli aplikaci, ale aby byla dostupná na nastavené doméně, musí naslouchat na portu **8080** a komunikovat **HTTP protokolem**.
 
 ## Supervisor
 
