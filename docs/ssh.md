@@ -30,3 +30,31 @@ Tuto vlastnost umí na Windows zprostředkovat Putty.
 ## Tunelování TCP portů
 
 SSH tunely jsou mocným nástrojem, který vám na Roští zpřístupní přístup k databázi.
+
+## Omezení
+
+Roští běží na SSH serveru Dropbear, který podporuje maximálně 8192-bitové ssh klíče. Silnější klíče server zamítne.
+
+## Jak vygenerovat klíč
+
+    ssh-keygen -t rsa -b 4096 -C "<VÁŠ EMAIL>"
+
+Po spuštění příkazu se vygeneruje klíč a budete dotázání na umístění a heslo ke klíči, které doporučujeme nastavit.
+
+## Jak dostat klíč na server
+
+    ssh-copy-id -i '/home/<LOKÁLNÍ UŽIVATEL>/.ssh/<NÁZEV KLÍČE>' app@alpha-node-<X>.rosti.cz -p<PORT>
+
+Toto je nejlepší způsob jak dostat klíč na server. Klient se automaticky připojí na server a vytvoří složku *~/.ssh* s patřičnými oprávněními. V této složce pak vytvoří soubor *autorized_keys* s vaším klíčem. Od této chvíle nebudete dotazování na heslo a připojení bude bezpečnější.
+
+## Jak si vytvořit ssh alias abych si nemusel pamatovat všechny parametry?
+
+Do souboru *~/.ssh/config* vložte následující text.
+
+    Host muj-web.cz
+    Hostname alpha-node-<X>.rosti.cz
+    User app
+    Port <PORT>
+    IdentityFile ~/.ssh/rosti
+
+Díky tomuto nastavení už nebudete muset nikde kopírovat hostname, port a uživatele. Vše proběhne automaticky při použítí příkazu ssh muj-web.cz.
