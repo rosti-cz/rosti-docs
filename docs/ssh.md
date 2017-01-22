@@ -20,7 +20,7 @@ SSH ale není jen o příkazové řádce. Je to univerzální kanál pro bezpeč
 SOCK proxy vám umožní dívat se na web z pohledu vaší aplikace. Pokud zavoláte v Linuxu následující:
 
 ```bash
-ssh app@pluto.rosti.cz -p 10xxx -D 1234
+ssh app@alpha-node-<X>.rosti.cz -p 10xxx -D 1234
 ```
 
 Tak se na lokálním portu 1234 otevře SOCK proxy, na kterou můžete nasměrovat svůj prohlížeč. Všechny stránky které budete procházet teď budete procházet skrze vzdálený server stejně jako by to dělala vaše aplikace.
@@ -35,7 +35,9 @@ SSH tunely jsou mocným nástrojem, který vám na Roští zpřístupní příst
 
 Roští běží na SSH serveru Dropbear, který podporuje maximálně 8192-bitové ssh klíče. Silnější klíče server zamítne.
 
-## Jak vygenerovat klíč
+## K čemu je klíč a jak vygenerovat klíč
+
+Klíče slouží pro pohodlnější a bezpečenější přístup k SSH serverům. Lokálně si vytvoříte pár public a private klíčů a public nahrajete na jeden či více serverů. SSH klient pak automaticky použije klíč místo hesla a heslo tedy nemusíte zadávat a přitom spojení zůstane bezpečné, dokonce více než s heslem. Na linuxu nebo v našem kontejneru se klíč generuje takto:
 
     ssh-keygen -t rsa -b 4096 -C "<VÁŠ EMAIL>"
 
