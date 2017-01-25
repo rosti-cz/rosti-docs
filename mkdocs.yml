@@ -6,6 +6,7 @@ pages:
     - "Základní pojmy": aword.md
     - "E-mailové schránky": emails.md
     - "SSH přístup": ssh.md
+    - "SSL certifikáty": ssl.md
     - Aplikace:
         - Úvod: apps/index.md
         - PHP: apps/php.md
