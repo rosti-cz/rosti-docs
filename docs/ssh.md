@@ -7,6 +7,20 @@ Přístup k aplikaci přes SSH je alfou a omegou Roští. Málo kde ho dostanete
 - SOCK proxy
 - Tunelování TCP portů
 
+## Kde najdu informace k připojení?
+
+Najdete je v info kartě aplikace a vypadají takto:
+
+    app@alpha-node-4.rosti.cz:12360
+
+Kde:
+
+* **app** je uživatel
+* **alpha-node-4.rosti.cz** je server
+* **12360** je port
+
+U vaší aplikace budou samozřejmě hodnoty jiné.
+
 ## Přístup k plnohodnotnému shellu (BASH)
 
 Shell je základní vlastnost SSH. Z Linuxu a Mac OS X se ke své aplikaci dostanete pomocí *openssh*, z Windows to je [Putty](http://www.putty.org/). Po přípojení dostanete plnou moc nad tím, v čem váš kód běží. Můžete ovlivnit supervisora, proměnné prostředí, používat Midnight Commander, vim, volat svoje vlastní skripty a mnoho dalšího. Pokud zkusíte na Roští toto, jiný hosting už vám vyhovovat nebude.
