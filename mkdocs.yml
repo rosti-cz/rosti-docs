@@ -23,4 +23,5 @@ pages:
         - Cron: tools/cron.md
         - "Doinstalování Node.js": addnode.md
     - "O nás": about.md
+    - "FAQ - časté dotazy": faq.md
 theme: readthedocs
