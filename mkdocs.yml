@@ -5,6 +5,9 @@ pages:
     - "DNS a registrace domén": dns.md
     - "Základní pojmy": aword.md
     - "E-mailové schránky": emails.md
+    - "SSH přístup": ssh.md
+    - "SSL certifikáty": ssl.md
+    - "Staré Roští": old.md
     - Aplikace:
         - Úvod: apps/index.md
         - PHP: apps/php.md
@@ -20,4 +23,5 @@ pages:
         - Cron: tools/cron.md
         - "Doinstalování Node.js": addnode.md
     - "O nás": about.md
+    - "FAQ - časté dotazy": faq.md
 theme: readthedocs

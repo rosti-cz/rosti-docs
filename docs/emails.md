@@ -10,7 +10,7 @@ E-mailové schránky na Roští mohou mít kapacitu až 25 GB, neomezený počet
 |SMTP port  | 587 | Pro odesílání pošty nepoužívejte port 25, je často blokovaný poskytovateli připojení k internetu |
 |IMAP server|mail.rosti.cz|IMAP podporuje PUSH notifikace (pro váš telefon)|
 |POP server|mail.rosti.cz|Zastaralý, doporučujeme nepoužívat|
-|Šifrování|*TLS*, někdy též *starttls*|Není povinné, ale doporučujeme zapnout|
+|Šifrování|*TLS*, někdy též *starttls*|Je nutné zapnout, bez něj nejede přihlašování|
 |Webový klient|[https://mail.rosti.cz/](https://mail.rosti.cz/) |Aplikace RoundCube|
 
 Když se vás e-mailový klient zeptá, zda chcete použít IMAP či POP, vyberte IMAP. U mobilních telefonů obzvlášť. IMAP čte ze serveru pouze meta informace a zprávy se drží na serveru. Díky tomu můžete spravovat svoji emailovou schránku z webového rozhraní, z desktopového klienta či z mobilního telefonu. IMAP navíc podporuje PUSH notifikace, díky kterým se váš telefon nemusí dotazovat, zda dorazil nový email, ale server telefon sám upozorní, až k tomu dojde - což šetří baterii.
