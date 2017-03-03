@@ -16,6 +16,15 @@ V rámci podpory vám poradíme s nasazením aplikace, poradíme vám s nastaven
 
 Zálohování v současné době řešíme na vyhrazený zálohovací server a držíme historii tří dnů. Zálohy jsou určeny primárně pro nás pro případ selhání hardwaru a za obnovu dat, kdy jsme jejich ztrátu nezavinili, můžeme účtovat poplatek podle ceníku. Proto doporučujeme, abyste si dělali zálohu i pro vlastní potřebu. Vy znáte svoje data nejlépe a víte nejlépe jak často a kdy je zálohovat.
 
+## Je možné mít MongoDB
+
+Ano, je to možné. Na začátku jsme provozovali sdílenou MongoDB databázi, ale z bezpečnostních důvodů jsme tuto možnost museli zrušit. Aktuálně nabízíme MongoDB jen jako další aplikaci a vytváříme ji ručně na požádání na technické podpoře.
+
+Takhle provozovaná MongoDB je vyhrazena jen jednomu uživateli a ten za ní platí stejně jako za aplikaci podle balíčku, na kterém se dohodneme při instalaci. Konkrétní ceny a parametry jsou stejné jako u balíčků a najdete je v [našem ceníku](https://rosti.cz/cenik/).
+
+Všechny naše servery zálohujeme pomoci nástroje rsync, nicméně u databází může v tomto případě dojít k nekonzistencím. Proto *doporučujeme dělat si zálohy vlastní*. MongoDB u nás zatím nemá vyřešeno systémové nasazování a tak jsme museli přistoupit k tomuto kompromisu.
+
+
 ## Kolik stojí vypnutá aplikace
 
 Často se nám stává, že si uživatel vypne aplikaci a pak nám píše, když se dostává s kreditem do mínusu. To že vypnete aplikaci znamená, že uvolníte prostředky, které se na serveru používáte s vyjímkou diskového prostoru. Pořád musíme vaši aplikaci držet na disku a zálohovat ji. Kvůli tomu u vypnutých aplikací strháváme kredit za diskový prostor. V současné době účtujeme u vypnuté aplikace 5 Kč za GB prostoru.
