@@ -43,7 +43,12 @@ Tuto vlastnost umí na Windows zprostředkovat Putty.
 
 ## Tunelování TCP portů
 
-SSH tunely jsou mocným nástrojem, který vám na Roští zpřístupní přístup k databázi.
+SSH tunely jsou mocným nástrojem, který vám na Roští zpřístupní přístup k databázi. Když chcete například zpřístupnit interní port MySQL databáze, zavoláte následující příkaz:
+
+    ssh -L 127.0.0.1:3306:storeX.rosti.cz:3306 -p PORT app@alpha-node-Y.rosti.cz
+
+Kde **PORT**, **X** a **Y** nahradíte za SSH port vaší aplikace, číslo databázového serveru kde máte databázi a číslo server kde máte aplikaci samotnou. 
+
 
 ## Omezení
 

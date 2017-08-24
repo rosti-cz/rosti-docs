@@ -10,8 +10,6 @@ Běh PHP aplikací je u nás stejně flexibilní jako u jiných technologí, ale
 
 Když se objeví nová verze, během pár týdnů ji přidáme. Aktualizujeme image vždy na nejnovější sub minor verzi. Minoritní verze budou k dispozici vždy, i po skončení jejich oficiální podpory. Na končící podporu se vás budeme snažit upozorňovat a dostanete prostor pro vyřešení ať už přechodem na novější verzi nebo setrváním u již nepodporované verze.
 
-Aktuálně Roští používá *mod_php* ve webovém serveru Apache. Každá aplikace má vlastní Apache a to nám umožňuje vám dát například APC cache. Máme plány na přechod na *Nginx* a *php-fpm*, ale aktuálně to pro nás není priorita.
-
 ## Změna verze
 
 Mezi verzemi PHP lze snadno přepínat. U vytvořené aplikace stačí změnit image na jinou verzi PHP a kliknout na uložit. Na pozadí se znovu vytvoří kontejner, připojí se do něj vaše data a během minuty přejdete na nové PHP. Stejně tak se můžete vrátit zpět.
