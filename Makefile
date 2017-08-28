@@ -12,15 +12,13 @@ DESTINATIONUSER=app
 NAME=rosti-docs
 VERSION=0.1
 
-.PHONY: clean build upload all
-
-clean:
-	rm -rf ${BASEDIR}/site
+.PHONY: build upload all
 
 upload: build
 	rsync -avz -e "ssh -p ${DESTINATIONPORT}" ${BASEDIR}/site/ ${DESTINATIONUSER}@${DESTINATIONMACHINE}:${DESTINATIONDIR}
 
 build:
+	rm -rf ${BASEDIR}/site
 	mkdocs build
 
-all: clean build upload
+all: build upload
