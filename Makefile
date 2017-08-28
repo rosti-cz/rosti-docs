@@ -17,7 +17,7 @@ VERSION=0.1
 clean:
 	rm -rf ${BASEDIR}/site
 
-upload:
+upload: build
 	rsync -avz -e "ssh -p ${DESTINATIONPORT}" ${BASEDIR}/site/ ${DESTINATIONUSER}@${DESTINATIONMACHINE}:${DESTINATIONDIR}
 
 build:
