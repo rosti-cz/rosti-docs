@@ -16,6 +16,7 @@ pages:
         - Ruby: apps/ruby.md
     - Úložiště:
 #        - Úvod: storages/index.md
+        - MongoDB: storages/mongo.md
         - Memcached: storages/memcached.md
         - Redis: storages/redis.md
     - Nástroje:
