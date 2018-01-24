@@ -29,7 +29,6 @@ V kontejnerech na Roští běží vše pod daemonem supervisor, který umí efek
     command=/srv/bin/mongod --dbpath /srv/var/mongodb
     autostart=true
     autorestart=true
-    process_name=nginx
     stdout_logfile=/srv/logs/mongodb.log
     stdout_logfile_maxbytes=2MB
     stdout_logfile_backups=5
