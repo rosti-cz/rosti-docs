@@ -1,5 +1,7 @@
 ## E-mailové schránky
 
+**Emailové služby na Roští.cz 31.5.2018 končí. O možnostech kam můžete svou poštu přesunou se dozvíte [zde](end_of_emails).**
+
 E-mailové schránky na Roští mohou mít kapacitu až 25 GB, neomezený počet e-mailů a je možné je vybírat přes protokol POP a IMAP. Veškerá e-mailová komunikace je spravována servery **mail.rosti.cz** a **smtp.rosti.cz**. Nastavení vašeho klienta by tedy mělo vypadat takto:
 
 |Parametr|Hodnota|Poznámka|

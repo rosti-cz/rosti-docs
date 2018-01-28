@@ -5,6 +5,7 @@ pages:
     - "DNS a registrace domén": dns.md
     - "Základní pojmy": aword.md
     - "E-mailové schránky": emails.md
+    - "Migrace e-mailů z Roští": end_of_emails.md
     - "SSH přístup": ssh.md
     - "SSL certifikáty": ssl.md
     - "Staré Roští": old.md
