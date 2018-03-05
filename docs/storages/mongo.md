@@ -36,6 +36,10 @@ V kontejnerech na Roští běží vše pod daemonem supervisor, který umí efek
     stdout_events_enabled=false
     redirect_stderr=true
 
+Dále je potřeba vytvořit adresář pro data:
+
+    mkdir -p /srv/var/mongodb
+
 Pak přes SSH zavoláme:
 
     supervisorctl reread
