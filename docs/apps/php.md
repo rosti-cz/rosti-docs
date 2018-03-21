@@ -14,6 +14,20 @@ Když se objeví nová verze, během pár týdnů ji přidáme. Aktualizujeme im
 
 Mezi verzemi PHP lze snadno přepínat. U vytvořené aplikace stačí změnit image na jinou verzi PHP a kliknout na uložit. Na pozadí se znovu vytvoří kontejner, připojí se do něj vaše data a během minuty přejdete na nové PHP. Stejně tak se můžete vrátit zpět.
 
+U změny verze PHP je potřeba upravit konfiguraci supervisoru v souboru */srv/conf/supervisor.d/php.conf*.
+
+    [program:app]
+    command=/usr/sbin/php-fpm7.0 -F -O -g /srv/run/php-fpm.pid -y /srv/conf/php-fpm/php-fpm.conf
+    directory=/srv/app
+    autostart=true
+    autorestart=true
+    stdout_logfile=/srv/logs/app.log
+    stdout_logfile_maxbytes=2MB
+    stdout_logfile_backups=5
+    redirect_stderr=true
+
+Kde se **php-fpm7.0** nahradí za **php-fpm** vyžadované verze.
+
 ## php.ini
 
 Nastavení PHP, v souboru *php.ini*, můžete libovolně měnit. Soubor se nachází v */srv/conf/php.ini*. Jedná se o symlink do */etc/php5/conf.d/99-custom.ini*, takže výchozím stavem je */etc/php5/apache2/php.ini* a ve vašem */srv/conf/php.ini* stačí uvést hodnoty, které chcete mít proti výchozímu stavu jiné. Díky tomu můžeme měnit verze PHP a konfigurace zůstane ve většině případů kompatibilní.
