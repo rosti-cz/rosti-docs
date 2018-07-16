@@ -52,3 +52,13 @@ Všechny informace o běhu vaší aplikace najdete v */srv/logs*. Běh aplikace 
 
 V administraci je možné změnit obraz s verzí PHP. Na rozdíl od jiných jazyků, PHP obrazy nevyžadují žádné další kroky od uživatele a je možné s verzemi cestovat na novější i starší. Po změně obrazu se celý kontejner restartuje a jediné, na co si musíte dát pozor, je kompatibilita vašeho kódu s novým PHP.
 
+## Max execution time
+
+V případě, že potřebujete hodně času na provedení requestu, můžete zvednout *max_execution_time* až na **180 sekund**. Lze ho zvednout i výš, ale po 180 sekundách ukončí request load balancer.
+
+V závislosti na tom, zda během tohoto času posíláte data nebo jen čekáte, musíte upravit i další parametry v následujících souborech:
+
+    /srv/conf/php.ini: max_execution_time = 240
+    /srv/conf/php-fpm/pool.d/app.conf: request_terminate_timeout = 240
+    /srv/conf/nginx.d/php.conf: fastcgi_read_timeout 240;
+
