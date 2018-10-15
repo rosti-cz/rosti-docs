@@ -32,6 +32,36 @@ supervisorctl start app
 
 První a poslední příkaz zastaví a spustí vaši aplikaci. Předposlední nainstaluje závislosti uložené v _/srv/app/requirements.txt_ a další příkazy pravděpodobně není třeba další rozebírat.
 
+## Statické soubory
+
+Pythoní webové servery jsou relativně pomalé a tak se nehodí pro servírování statického obsahu jako obrázky, browser-side scripty, styly, videa, archivy a další. Webové frameworky na tento fakt upozorňují ve svých dokumentacích a některé v produkčním nasazení neumožňují statický obsah vůbec servírovat - alespoň ne standardní cestou.
+
+Na Roští pro tyto případy používáme Nginx, který lze snadno nasměrovat do adresáře se statickým obsahem a ten zpřístupnit třeba na */static/* vaší aplikace. Ve výchozím stavu je vše připraveno v souboru:
+
+  /srv/conf/nginx.d/python.conf
+
+Jeho obsah je:
+
+  server {
+      listen       0.0.0.0:8000;použít lomítko na konci. Oba řádky musí končit stejně, takže buď
+      listen       [::]:8000;
+      location / {
+          proxy_pass         http://127.0.0.1:8080/;
+          proxy_redirect     default;
+          proxy_set_header   X-Real-IP  $remote_addr;
+          proxy_set_header   Host       $host;
+      }
+      #location /static/ {
+      #    alias /srv/static/;
+      #}
+  }
+
+Zakomentovanou sekci můžete odkomentovat pak cesta (path) */static/* bude servírovat obsah adresáře */srv/static/*. V některých případech raději použijete */srv/app/static*, takže podle toho změňte cestu v tomto souboru. Když máte hotovo, tak zavolejte:
+
+  supervisorctl restart nginx
+
+Oba řádky s *location* a *alias* musí končit stejně (nepočítáme středník a závorku). Pokud máte na konci *location* lomítko, musí být uvedeno i na konci hodnoty *alias* a obráceně. Pokud použijete lomítko jen u jednoho z řádků, dostanete špatně debugovatelný a hlavně chybný výsledek.
+
 ## Supervisor
 
 Pro kompletní informace o supervisoru se prosím podívejte na [stránku dokumentace](../tools/supervisor.md), kterou věnujeme právě jemu.
@@ -78,5 +108,3 @@ rm -rf venv
 source venv/bin/activate
 pip install -r app/requirements.txt
 ```
-
-
