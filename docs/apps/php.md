@@ -1,20 +1,21 @@
 # PHP
 
-Běh PHP aplikací je u nás stejně flexibilní jako u jiných technologí, ale PHP se z principu nasazuje o něco snadněji. Podporujeme širokou škálu verzí PHP od 5.4 po ty nejnovější, vždy se skokem v minoritní verzi, takže:
+*V této části dokumentace najdete informace k imagům s PHP 7.x. PHP 5.6 je postupně na ústupu a nedoporučujeme ho dále používat.*
 
-* PHP 5.4
-* PHP 5.5
+PHP kód se na Roští z principu nasazuje o něco snadněji. Podporujeme širokou škálu verzí PHP od 5.6 po ty nejnovější, vždy se skokem v minoritní verzi, takže:
+
 * PHP 5.6
-* PHP 5.x
 * PHP 7.0
+* PHP 7.1
+* PHP 7.2
 
-Když se objeví nová verze, během pár týdnů ji přidáme. Aktualizujeme image vždy na nejnovější sub minor verzi. Minoritní verze budou k dispozici vždy, i po skončení jejich oficiální podpory. Na končící podporu se vás budeme snažit upozorňovat a dostanete prostor pro vyřešení ať už přechodem na novější verzi nebo setrváním u již nepodporované verze.
+Když se objeví nová verze, většinou ji sami přidáme, ale pokud se tak nestalo, neváhejte nám napsat. Aktualizujeme image vždy na nejnovější sub minor verzi. Minoritní verze budou k dispozici vždy, i po skončení jejich oficiální podpory. Na končící podporu se vás budeme snažit upozorňovat a dostanete prostor pro vyřešení ať už přechodem na novější verzi nebo setrváním u již nepodporované verze.
 
 ## Změna verze
 
-Mezi verzemi PHP lze snadno přepínat. U vytvořené aplikace stačí změnit image na jinou verzi PHP a kliknout na uložit. Na pozadí se znovu vytvoří kontejner, připojí se do něj vaše data a během minuty přejdete na nové PHP. Stejně tak se můžete vrátit zpět.
+Mezi verzemi PHP lze přepínat. U vytvořené aplikace stačí změnit image na jinou verzi PHP a kliknout na uložit. Na pozadí se znovu vytvoří kontejner, připojí se do něj vaše data a během minuty přejdete na nové PHP. Stejně tak se můžete vrátit zpět.
 
-U změny verze PHP je potřeba upravit konfiguraci supervisoru v souboru */srv/conf/supervisor.d/php.conf*.
+Po změně v administraci je potřeba upravit konfiguraci supervisoru v souboru */srv/conf/supervisor.d/php.conf*.
 
     [program:app]
     command=/usr/sbin/php-fpm7.0 -F -O -g /srv/run/php-fpm.pid -y /srv/conf/php-fpm/php-fpm.conf
@@ -30,9 +31,9 @@ Kde se **php-fpm7.0** nahradí za **php-fpm** vyžadované verze.
 
 ## php.ini
 
-Nastavení PHP, v souboru *php.ini*, můžete libovolně měnit. Soubor se nachází v */srv/conf/php.ini*. Jedná se o symlink do */etc/php5/conf.d/99-custom.ini*, takže výchozím stavem je */etc/php5/apache2/php.ini* a ve vašem */srv/conf/php.ini* stačí uvést hodnoty, které chcete mít proti výchozímu stavu jiné. Díky tomu můžeme měnit verze PHP a konfigurace zůstane ve většině případů kompatibilní.
+Nastavení PHP, v souboru *php.ini*, můžete libovolně měnit. Soubor se nachází v */srv/conf/php.ini*. Jedná se o symlink do */etc/php5/conf.d/99-custom.ini*, takže výchozím stavem je */etc/php/7.x/fpm/php.ini* a ve vašem */srv/conf/php.ini* stačí uvést hodnoty, které chcete mít proti výchozímu stavu jiné. Díky tomu můžeme měnit verze PHP a konfigurace zůstane ve většině případů kompatibilní.
 
-Po změně *php.ini* je potřeba restartovat Apache, to se provádí přes supervisor pomocí:
+Po změně *php.ini* je potřeba restartovat PHP-FPM proces, to se provádí přes supervisor pomocí:
 
 ```shell
 supervisorctl restart app
@@ -42,13 +43,8 @@ supervisorctl restart app
 
 Pro kompletní informace o supervisoru se prosím podívejte na [stránku dokumentace](../tools/supervisor.md), kterou věnujeme právě jemu.
 
-Apache běží pod daemonem *supervisord*, jehož nastavení je možné ovlivnit v */srv/conf/supervisor.d*. Pro PHP je zde menší význam než u jiných technologií, ale do supervisoru můžete dát i další skripty běžící na pozadí. Tato možnost je určena pro zkušenější uživatele a případné využití je třeba konzultovat s [dokumentací supervisoru](http://supervisord.org/). Můžete se obrátit i na naši technickou podporu.
+Kromě PHP-FPM běží ve vašem kontejneru ještě Nginx, jehož konfiguraci můžete libovolně měnit. Konfiguraci najdete v */srv/conf/nginx.d* a parametry, se kterými se Nginx spouští, najdete v */srv/conf/supervisor.d*. Pro PHP má Nginx menší význam než u jiných technologií, ale můžete ho použít pro snadné nastavení hlaviček, cachování nebo pokročilé servírování statického obsahu. Supervisor je vám, stejně jako PHP-FPM a Nginx, plně k dispozici a můžete do něj dát i další skripty, které pak poběží na pozadí. Tato možnost je určena pro zkušenější uživatele a případné využití je třeba konzultovat s [dokumentací supervisoru](http://supervisord.org/). Můžete se obrátit i na naši technickou podporu.
 
 ## Hledání problémů
 
 Všechny informace o běhu vaší aplikace najdete v */srv/logs*. Běh aplikace můžete ovlivnit v mnoha směrech a tak by nemělo být složité problém nalézt. Pokud si ale nebudete vědět rady, napište nám na podporu a určitě nějaké řešení vymyslíme.
-
-## Aktualizace/změna obrazu
-
-V administraci je možné změnit obraz s verzí PHP. Na rozdíl od jiných jazyků, PHP obrazy nevyžadují žádné další kroky od uživatele a je možné s verzemi cestovat na novější i starší. Po změně obrazu se celý kontejner restartuje a jediné, na co si musíte dát pozor, je kompatibilita vašeho kódu s novým PHP.
-

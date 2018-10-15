@@ -1,5 +1,11 @@
 # Základní informace
 
+Roští je hostingová služba pro stateful aplikace. Je sice postavený na kontejnerech managovaných Dockerem, ale směrem k uživateli má tvář klasického hostingu s několika věcmi navíc. Především má každá aplikace vlastní prostředí (kontejner) a nemůže zasahovat do běhu aplikací, které běží na stejném serveru. Všechny aplikace sice sdílejí systémové prostředky, ale limity jsou nastaveny tak, aby jedna aplikace nemohla využít kompletní výkon celého serveru. 
+
+## Pro koho je Roští
+
+Protože Roští je primárně hostingem stateful aplikací, je možné u nás hostovat prakticky jakýkoli projekt napsaný v PHP, Pythonu, Node.js, Javě nebo jakéhokoli kompilovaného jazyka, například Go. Na Roští se za vás postaráme o servery, databáze i prostředí, kde váš kód běží. Řešíme také zálohování a monitoring. Na váš 
+
 Když už jste se rozhodli začít používat Roští.cz naplno, musíte vědět, jak to u nás funguje. Administraci se snažíme dělat tak, aby byla co nejintuitivnější, takže zde nebudeme popisovat, kam máte kliknout. Mělo by to být jasné na první pohled, ale když už nějakou aplikaci vytvoříte, schovává se za ní toto.
 
 Roští.cz je postavené na technologii Docker. Je to nástroj na správu linuxových kontejnerů. Na Roští říkáme každé webové službě, doméně, či skupině domén s jednou službu aplikace a každá vytvořená aplikace má svůj kontejner s:
