@@ -27,7 +27,7 @@ Všechny naše servery zálohujeme pomoci nástroje rsync, nicméně u databáz�
 
 ## Kolik stojí vypnutá aplikace
 
-Často se nám stává, že si uživatel vypne aplikaci a pak nám píše, když se dostává s kreditem do mínusu. To že vypnete aplikaci znamená, že uvolníte prostředky, které se na serveru používáte s vyjímkou diskového prostoru. Pořád musíme vaši aplikaci držet na disku a zálohovat ji. Kvůli tomu u vypnutých aplikací strháváme kredit za diskový prostor. V současné době účtujeme u vypnuté aplikace 5 Kč za GB prostoru.
+Vypnutím aplikace uvolníte většinu prostředků, které aplikace používala, s vyjímkou diskového prostoru. Data aplikace ale stále držíme na disku a zálohujeme ji. Kvůli tomu u vypnutých aplikací strháváme kredit za diskový prostor. V současné době účtujeme u vypnuté aplikace 5 Kč za GB.
 
 ## Jak je omezený SSH přístup
 

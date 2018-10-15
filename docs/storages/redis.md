@@ -26,8 +26,8 @@ Spuštěním se do */srv/conf/redis.conf* nakopíruje konfigurační soubor, kte
 
 K běžící instanci Redisu existují dva log soubory:
 
-* /srv/logs/redis.conf - sem loguje supervisor a mohou zde být chyby ze spuštění
-* /srv/logs/redis-server.conf - sem loguje Redis sám a bude zde chyby z běhu
+* /srv/logs/redis.log - sem loguje supervisor a mohou zde být chyby ze spuštění
+* /srv/logs/redis-server.log - sem loguje Redis sám a bude zde chyby z běhu
 
 Redis bude poslouchat na **localhost** a na standardním portu **6379**. Vyzkoušet si to můžete přes:
 

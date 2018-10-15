@@ -48,3 +48,13 @@ Kromě PHP-FPM běží ve vašem kontejneru ještě Nginx, jehož konfiguraci m�
 ## Hledání problémů
 
 Všechny informace o běhu vaší aplikace najdete v */srv/logs*. Běh aplikace můžete ovlivnit v mnoha směrech a tak by nemělo být složité problém nalézt. Pokud si ale nebudete vědět rady, napište nám na podporu a určitě nějaké řešení vymyslíme.
+
+## Max execution time
+
+V případě, že potřebujete hodně času na provedení requestu, můžete zvednout *max_execution_time* až na **180 sekund**. Lze ho zvednout i výš, ale po 180 sekundách ukončí request load balancer.
+
+V závislosti na tom, zda během tohoto času posíláte data nebo jen čekáte, musíte upravit i další parametry v následujících souborech:
+
+    /srv/conf/php.ini: max_execution_time = 240
+    /srv/conf/php-fpm/pool.d/app.conf: request_terminate_timeout = 240
+    /srv/conf/nginx.d/php.conf: fastcgi_read_timeout 240;
