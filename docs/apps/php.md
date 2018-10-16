@@ -55,29 +55,29 @@ V případě, že potřebujete hodně času na provedení requestu, můžete zve
 
 V závislosti na tom, zda během tohoto času posíláte data nebo jen čekáte, musíte upravit i další parametry v následujících souborech:
 
-  /srv/conf/php.ini: max_execution_time = 240
-  /srv/conf/php-fpm/pool.d/app.conf: request_terminate_timeout = 240
-  /srv/conf/nginx.d/php.conf: fastcgi_read_timeout 240;
+    /srv/conf/php.ini: max_execution_time = 240
+    /srv/conf/php-fpm/pool.d/app.conf: request_terminate_timeout = 240
+    /srv/conf/nginx.d/php.conf: fastcgi_read_timeout 240;
 
 ## Změna počtu workerů
 
 U některých aplikací, které posílají spoustu requestů na server, se může stát, že se zahltí všechny dostupné workery a pro uživatele se pak server tváří, jako kdyby nereagoval. Počet workerů jde navýšit v konfiguraci PHP-FPM a to v souboru:
 
-  /srv/conf/php-fpm/pool.d/app.conf
+    /srv/conf/php-fpm/pool.d/app.conf
 
 Konkrétně můžete změnit řádky:
 
-  # Maximální počet workerů
-  pm.max_children = 25
-  # Kolik workerů bude startovat při spuštění PHP-FPM
-  pm.start_servers = 5
-  # Kolik minimálně workerů bude čekat na request
-  pm.min_spare_servers = 2
-  # Kolik maximálně workerů bude čekat na request
-  pm.max_spare_servers = 5
+    # Maximální počet workerů
+    pm.max_children = 25
+    # Kolik workerů bude startovat při spuštění PHP-FPM
+    pm.start_servers = 5
+    # Kolik minimálně workerů bude čekat na request
+    pm.min_spare_servers = 2
+    # Kolik maximálně workerů bude čekat na request
+    pm.max_spare_servers = 5
 
 Ve stejném souboru je k jednotlivým hodnotám i dokumentace. Pokud provedete nějakou změnu, nezapomeňte na:
 
-  supervisorctl restart app
+    supervisorctl restart app
 
 Výchozí hodnoty jsou nastaveny relativně nízko, což může být pro aplikace jako je Wordpress nebo Woocart málo, v závislosti na nainstalovaných pluginech a počtu uživatelů připojených v jednom čase.

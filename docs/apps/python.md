@@ -15,7 +15,7 @@ Základním stavebním kamenem Pythonu je virtualenv. Je dostupný pro všechny 
 
 Virtualenv se nachází v adresáři _/srv/venv/_ a pokud není, můžete ho aktivovat pomocí:
 
-  source /srv/venv/bin/activate
+    source /srv/venv/bin/activate
 
 ### Znovuvytvoření virtualenvu
 
@@ -38,27 +38,27 @@ Pythoní webové servery jsou relativně pomalé a tak se nehodí pro servírov�
 
 Na Roští pro tyto případy používáme Nginx, který lze snadno nasměrovat do adresáře se statickým obsahem a ten zpřístupnit třeba na */static/* vaší aplikace. Ve výchozím stavu je vše připraveno v souboru:
 
-  /srv/conf/nginx.d/python.conf
+    /srv/conf/nginx.d/python.conf
 
 Jeho obsah je:
 
-  server {
-      listen       0.0.0.0:8000;použít lomítko na konci. Oba řádky musí končit stejně, takže buď
-      listen       [::]:8000;
-      location / {
-          proxy_pass         http://127.0.0.1:8080/;
-          proxy_redirect     default;
-          proxy_set_header   X-Real-IP  $remote_addr;
-          proxy_set_header   Host       $host;
-      }
-      #location /static/ {
-      #    alias /srv/static/;
-      #}
-  }
+    server {
+        listen       0.0.0.0:8000;použít lomítko na konci. Oba řádky musí končit stejně, takže buď
+        listen       [::]:8000;
+        location / {
+            proxy_pass         http://127.0.0.1:8080/;
+            proxy_redirect     default;
+            proxy_set_header   X-Real-IP  $remote_addr;
+            proxy_set_header   Host       $host;
+        }
+        #location /static/ {
+        #    alias /srv/static/;
+        #}
+    }
 
 Zakomentovanou sekci můžete odkomentovat pak cesta (path) */static/* bude servírovat obsah adresáře */srv/static/*. V některých případech raději použijete */srv/app/static*, takže podle toho změňte cestu v tomto souboru. Když máte hotovo, tak zavolejte:
 
-  supervisorctl restart nginx
+    supervisorctl restart nginx
 
 Oba řádky s *location* a *alias* musí končit stejně (nepočítáme středník a závorku). Pokud máte na konci *location* lomítko, musí být uvedeno i na konci hodnoty *alias* a obráceně. Pokud použijete lomítko jen u jednoho z řádků, dostanete špatně debugovatelný a hlavně chybný výsledek.
 
