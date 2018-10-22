@@ -1,6 +1,6 @@
 # DNS a domény
 
-Roští zatím neregistruje domény, ale postará se o vaše DNS záznamy. Je lepší, pokud nasměrujete vaše domény na naše DNS servery, můžeme pak editovat DNS záznamy podle toho, jak postupuje vývoj Roští.cz. Neměníme adresy často, ale jednou za pár let musíme, protože se objevují nové služby a nástroje, které různým způsobem usnadňují život našim uživatelům. Naposledy šlo například o přidání ochranny přes DDOS útoky.
+Roští zatím neregistruje domény, ale postará se o vaše DNS záznamy. Je lepší, pokud nasměrujete vaše domény na naše DNS servery, můžeme pak editovat DNS záznamy podle toho, jak postupuje vývoj Roští.cz. Neměníme adresy často, ale jednou za pár let musíme, protože se objevují nové služby a nástroje, které různým způsobem usnadňují život našim uživatelům. Naposledy šlo například o přidání ochrany přes DDOS útoky.
 
 Až budete registrovat doménu, tak v případě, že se jedná o _.cz_ doménu, nastavte ji *NSSET* na *ROSTICZ*.
 

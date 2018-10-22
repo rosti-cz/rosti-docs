@@ -14,8 +14,11 @@ VERSION=0.1
 
 .PHONY: all build upload clean
 
-build:
-	mkdocs build
+sync:
+	pipenv sync
+
+build: sync
+	pipenv run mkdocs build
 
 upload: build
 	rsync -avz -e "ssh -p ${DESTINATIONPORT}" ${BASEDIR}/site/ ${DESTINATIONUSER}@${DESTINATIONMACHINE}:${DESTINATIONDIR}
