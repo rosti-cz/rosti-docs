@@ -83,17 +83,20 @@ cd
 rm -rf venv
 /opt/python/bin/virtualenv venv
 source venv/bin/activate
+pip install gunicorn
 pip install -r app/requirements.txt
 supervisorctl restart app
 ```
 
-Soubor *requirements.txt* by měl být obsažen v každé vaší aplikaci, aby jste si usnadnili upgrade ale i deployment. Nezapomeňte seznam aktualizovat, například pomocí:
+Soubor *requirements.txt* by měl být obsažen v každé vaší aplikaci, aby jste si usnadnili upgrade ale i deployment. Pokud ho nemáte, tak před změnou obrazu zavolejte:
 
 ```bash
 pip freeze > ~/app/requirements.txt
 ```
 
-V Pythonu 3 už je virtualenv integrován jako *pyvenv*. Roští používá u všech Pythonů *virtualenv* z důvodu kompatibility, ale pokud jste používali sami v minulosti *pyvenv*, je aktualizace o poznání jednodušší:
+Pokud přechází z Python 2.7 na 3.x, můžete narazit na problémy se závislostmi, které zde bohužel nemůžeme popsat. Takový přechod ale už máte pravděpodobně za sebou ve vývojovém prostředí.
+
+V Pythonu 3 už je virtualenv integrován jako *pyvenv*. Roští používá u všech Pythonů klasický *virtualenv* z důvodu kompatibility, ale pokud jste sami v minulosti používali *pyvenv*, je aktualizace o poznání jednodušší:
 
 ```bash
 /opt/python/bin/pyvenv --upgrade ~/venv
@@ -104,7 +107,10 @@ Pro úplnost ještě uvedu, že virtualenv s *pyvenv* se vytváří takto:
 ```bash
 cd
 rm -rf venv
-/opt/python/bin/pyvenv venv
+mkdir -p ~/venv && /opt/python/bin/python -m venv ~/venv
 source venv/bin/activate
+pip install gunicorn
 pip install -r app/requirements.txt
 ```
+
+Pokud si změnou nejste jistí, můžete chvíli provozovat dvě aplikace, každou pro jinou verzi a až bude nová verze fungovat, tak jen přehodit domény. Tato činnost se dá automatizovat do vašeho CI přes [naše API](https://admin.rosti.cz/api/) a tedy používat ho i pro nasazování nových verzí vaší aplikace.
