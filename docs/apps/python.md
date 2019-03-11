@@ -99,7 +99,7 @@ Pokud přechází z Python 2.7 na 3.x, můžete narazit na problémy se závislo
 V Pythonu 3 už je virtualenv integrován jako *pyvenv*. Roští používá u všech Pythonů klasický *virtualenv* z důvodu kompatibility, ale pokud jste sami v minulosti používali *pyvenv*, je aktualizace o poznání jednodušší:
 
 ```bash
-/opt/python/bin/pyvenv --upgrade ~/venv
+/opt/python/bin/python -m venv --upgrade ~/venv
 ```
 
 Pro úplnost ještě uvedu, že virtualenv s *pyvenv* se vytváří takto:
