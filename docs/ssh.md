@@ -21,6 +21,13 @@ Kde:
 
 U vaší aplikace budou samozřejmě hodnoty jiné.
 
+---
+**Důležitá poznámka**
+
+Uživatel *app* je pro všechny aplikace stejný. *Server* i *port* se pak mohou aplikace od aplikace lišit. V info kartě všechny důležité údaje vypisujeme včetně URI a příkazu pro příkazovou řádku.
+
+---
+
 ## Přístup k plnohodnotnému shellu (BASH)
 
 Shell je základní vlastnost SSH. Z Linuxu a Mac OS X se ke své aplikaci dostanete pomocí *openssh*, z Windows to je [Putty](http://www.putty.org/). Po přípojení dostanete plnou moc nad tím, v čem váš kód běží. Můžete ovlivnit supervisora, proměnné prostředí, používat Midnight Commander, vim, volat svoje vlastní skripty a mnoho dalšího. Pokud zkusíte na Roští toto, jiný hosting už vám vyhovovat nebude.
