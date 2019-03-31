@@ -28,3 +28,5 @@ pages:
     - "O nás": about.md
     - "FAQ - časté dotazy": faq.md
 theme: readthedocs
+markdown_extensions:
+  - admonition

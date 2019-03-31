@@ -21,12 +21,8 @@ Kde:
 
 U vaší aplikace budou samozřejmě hodnoty jiné.
 
----
-**Důležitá poznámka**
-
-Uživatel *app* je pro všechny aplikace stejný. *Server* i *port* se pak mohou aplikace od aplikace lišit. V info kartě všechny důležité údaje vypisujeme včetně URI a příkazu pro příkazovou řádku.
-
----
+!!! important "Důležitá poznámka"
+    Uživatel *app* je pro všechny aplikace stejný. *Server* i *port* se pak mohou aplikace od aplikace lišit. V info kartě všechny důležité údaje vypisujeme včetně URI a příkazu pro příkazovou řádku.
 
 ## Přístup k plnohodnotnému shellu (BASH)
 
