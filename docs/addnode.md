@@ -9,11 +9,14 @@ tar xf node-v0.12.7-linux-x64.tar.gz
 mv node-v0.12.7-linux-x64 node
 ```
 
-Pak otevřete soubor *.bashrc*, najděte v něm řádek (na začátku souboru), kde se nastavuje proměnná *PATH* a upravte ho následujícím způsobem:
+Pak otevřete soubor */srv/.bashrc*, najděte v něm řádek (na začátku souboru), kde se nastavuje proměnná *PATH* a upravte ho následujícím způsobem:
 
 ```bash
 export PATH=$PATH:/usr/sbin:/sbin:/opt/node/bin:/srv/node/bin
 ```
+
+!!! important ".bashrc"
+    Naše kontejnery používají jako shell BASH a obsah *.bashrc* se vkládá do prostředí BASHe vždy, když je nový BASH shell spuštěn. To se běžně děje, když se přihlásíte do kontejneru přes SSH. Díky tomu můžete do prostředí shellu přidat nastavení různých programů, upravovat proměnnou PATH nebo spustit nějaký program, který se má spouštět vždy při přihlášení.
 
 Navíc je zde */srv/node/bin*.
 
